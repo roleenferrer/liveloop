@@ -1,6 +1,7 @@
 import React from 'react';
 import Map from './Map.js';
 
+// Primary function for loading app
 function App() {
   return (
     <div>
@@ -10,7 +11,7 @@ function App() {
       </div>
       
       <Map />
-      
+
     </div>
     
   )
