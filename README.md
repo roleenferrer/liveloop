@@ -1,4 +1,4 @@
-# <img src="assets\logo.png" style="zoom: 25%;" />
+# <img src="public\logo.png" style="zoom: 25%;" />
 
 ## **A Web Application for Near-Real Time Tracking of UC Santa Cruz Loop Buses**
 
