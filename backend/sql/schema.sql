@@ -4,6 +4,7 @@ DROP TABLE IF EXISTS buses CASCADE;
 -- Create tables
 CREATE TABLE buses(
   bus_id INT UNIQUE,
+  direciton BOOLEAN,
   longitude DOUBLE PRECISION,
   latitude DOUBLE PRECISION,
   active BOOLEAN,
