@@ -1,7 +1,6 @@
 import React from "react";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
 import { makeStyles } from "@mui/styles";
 import ListIcon from "@mui/icons-material/List";
 import PersonIcon from "@mui/icons-material/Person";
@@ -47,14 +46,15 @@ function Nav() {
 				getContentAnchorEl={null}
 				anchorOrigin={{ vertical: "top", horizontal: "right" }}
 			>
-				<MenuItem onClick={handleClose}>Feature1</MenuItem>
-				<MenuItem onClick={handleClose}>Feature2</MenuItem>
-				<MenuItem onClick={handleClose}>Feature3</MenuItem>
+				<Button onClick={handleClose} href = "/feature1">Feature1</Button>
+				<Button onClick={handleClose} href = "/feature2">Feature2</Button>
+				<Button onClick={handleClose} href = "/feature3">Feature3</Button>
 			</Menu>
 			<Button
 				className={classes.person}
 				id="loginButton"
 				onClick={console.log("Person Clicked")}
+				href = "/login"
 			>
 				<PersonIcon fontSize="large" sx={{ color: "black" }} />
 			</Button>
