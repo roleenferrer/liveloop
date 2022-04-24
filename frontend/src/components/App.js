@@ -29,8 +29,8 @@ const useStyles = makeStyles({
 
 const location = {
   address: 'University of California, Santa Cruz',
-  lat: 36.99990206761345,
-  lng: -122.05838962419602,
+  lat: 36.988230225431984,
+  lng: -122.05822002436861,
 } 
 
 // Primary function for loading app
@@ -43,8 +43,10 @@ function App() {
       <div>
         This is where we implement the web page for Live Loop
       </div>
+
+	  {/* <SimpleMap/> */}
       
-      <Map location={location} zoomLevel={18}/>
+      <Map location={location} zoomLevel={15}/>
 
     </div>
     
