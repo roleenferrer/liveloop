@@ -7,13 +7,12 @@ import locationIcon from '@iconify/icons-mdi/map-marker'
 
 const Map = ({ location, zoomLevel }) => (
     <div className="map">
-      <h2 className="map-h2">Live Loop</h2>
-  
       <div className="google-map">
         <GoogleMapReact
           bootstrapURLKeys={{ key: 'AIzaSyASTDssYDFH7WAYmpavSLgcBqFopJVf87w' }}
           defaultCenter={location}
           defaultZoom={zoomLevel}
+          options={{disableDefaultUI: true}}
         >
           <LocationPin
             lat={location.lat}
