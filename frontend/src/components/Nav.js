@@ -1,65 +1,79 @@
 import React from "react";
 import Button from "@mui/material/Button";
-import Menu from "@mui/material/Menu";
 import { makeStyles } from "@mui/styles";
-import ListIcon from "@mui/icons-material/List";
 import PersonIcon from "@mui/icons-material/Person";
 
 const useStyles = makeStyles({
-	feature: {
-		alignItems: "center",
-	},
-	person: {
-		alignItems: "center",
-	},
+  logo: {
+    float: "left",
+  },
+  feature: {
+    float: "left",
+  },
+  person: {
+    float: "right",
+  },
+  ftext: {
+    color: "black",
+  },
+  ftext_active: {
+    color: "black",
+    textDecoration: "underline",
+  },
 });
 
 // Primary function for loading app
 function Nav() {
-	const classes = useStyles();
-	const [anchorEl, setAnchorEl] = React.useState(null);
-	const open = Boolean(anchorEl);
-	const handleClick = (event) => {
-		setAnchorEl(event.currentTarget);
-	};
-	const handleClose = () => {
-		setAnchorEl(null);
-	};
-	return (
-		<React.Fragment>
-			<Button
-				className={classes.feature}
-				id="featureButton"
-				aria-controls={open ? "featureMenu" : undefined}
-				aria-haspopup="true"
-				aria-expanded={open ? "true" : undefined}
-				onClick={handleClick}
-			>
-				<ListIcon sx={{ color: "black"}} />
-			</Button>
-			<Menu
-				id="featureMenu"
-				anchorEl={anchorEl}
-				open={open}
-				onClose={handleClose}
-				aria-labelledby="featureButton"
-				getContentAnchorEl={null}
-				anchorOrigin={{ vertical: "top", horizontal: "right" }}
-			>
-				<Button onClick={handleClose} href = "/feature1">Feature1</Button>
-				<Button onClick={handleClose} href = "/feature2">Feature2</Button>
-				<Button onClick={handleClose} href = "/feature3">Feature3</Button>
-			</Menu>
-			<Button
-				className={classes.person}
-				id="loginButton"
-				onClick={console.log("Person Clicked")}
-				href = "/login"
-			>
-				<PersonIcon fontSize="large" sx={{ color: "black" }} />
-			</Button>
-		</React.Fragment>
-	);
+  const classes = useStyles();
+  return (
+    <React.Fragment>
+      <Button
+        size="large"
+        className={classes.logo}
+        id="logo"
+        onClick={console.log("Home Clicked")}
+        href="/"
+      >
+        <img alt="Logo" src="clear_logo.png" />
+      </Button>
+
+      <Button
+        size="large"
+        className={classes.feature}
+        id="feature1"
+        onClick={console.log("Feature1 Clicked")}
+        href="/feature1"
+      >
+        <text className={classes.ftext}>Feature1</text>
+      </Button>
+      <Button
+        size="large"
+        className={classes.feature}
+        id="feature2"
+        onClick={console.log("Feature2 Clicked")}
+        href="/feature2"
+      >
+        <text className={classes.ftext}>Feature2</text>
+      </Button>
+      <Button
+        size="large"
+        className={classes.feature}
+        id="feature3"
+        onClick={console.log("Feature3 Clicked")}
+        href="/feature3"
+      >
+        <text className={classes.ftext}>Feature3</text>
+      </Button>
+      <Button
+        className={classes.person}
+        id="loginButton"
+        onClick={console.log("Person Clicked")}
+        href="/login"
+      >
+        <PersonIcon fontSize="large" sx={{ color: "black" }} />
+      </Button>
+    </React.Fragment>
+  );
 }
 
 export default Nav;
