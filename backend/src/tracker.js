@@ -15,6 +15,5 @@ exports.getLocation = async (req, res) => {
     values: [],
   };
   const {rows} = await pool.query(query);
-  console.log(rows[0]);
-  res.status(200).json(rows[0]);
+  res.status(200).json(rows);
 };

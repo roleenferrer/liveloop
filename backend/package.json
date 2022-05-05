@@ -49,7 +49,7 @@
     }
   },
   "scripts": {
-    "start": "nodemon src/server.js",
+    "start": "nodemon src/server.js & nodemon src/mockdata.js",
     "test": "jest --runInBand --coverage --verbose --forceExit",
     "lint": "./node_modules/.bin/eslint . --ext .js"
   }

@@ -18,7 +18,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BusLocation'
+                type: array
+                items:
+                  $ref: '#/components/schemas/BusLocation'
         default:
           description: unexpected error
           content:
