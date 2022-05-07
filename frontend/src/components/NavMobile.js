@@ -5,16 +5,11 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { blueGrey } from "@mui/material/colors";
 import { Divider } from "@mui/material";
 import { Box } from "@mui/system";
-import PersonIcon from "@mui/icons-material/Person";
 
 const useStyles = makeStyles({
   buttons: {
     display: "block",
     backgroundColor: blueGrey[900],
-    height: "100vh",
-  },
-  logo: {
-    width: "80%",
   },
   feature: {
     "&:hover": {
@@ -38,7 +33,7 @@ const useThemes = createTheme({
   },
 });
 // Primary function for loading app
-function Nav() {
+function NavMobile() {
   const classes = useStyles();
   return (
     <React.Fragment>
@@ -49,11 +44,11 @@ function Nav() {
               <Button
                 size="large"
                 id="logo"
-                className={classes.logo}
+                className={classes.feature}
                 onClick={console.log("Home Clicked")}
                 href="/"
               >
-                <img alt="Logo" src="./clear_logo.png" width="100%" />
+                <text className={classes.ftext}>Home</text>
               </Button>
             </div>
             <Divider sx={{ borderBottomWidth: 3 }} />
@@ -120,4 +115,4 @@ function Nav() {
     </React.Fragment>
   );
 }
-export default Nav;
+export default NavMobile;
