@@ -10,6 +10,7 @@ const tracker = require('./tracker');
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 app.use(express.urlencoded({extended: false}));
 
 const apiSpec = path.join(__dirname, '../api/openapi.yaml');
