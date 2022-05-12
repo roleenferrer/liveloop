@@ -1,12 +1,6 @@
 import React from 'react'
-// import GoogleMap from 'google-map-react'
 import './style/map.css'
-
-// import { Icon } from '@iconify/react'
-// import locationIcon from '@iconify/icons-mdi/map-marker'
-
-import { InfoWindow, Marker, GoogleMap, LoadScript } from '@react-google-maps/api'
-
+import {Marker, GoogleMap, LoadScript } from '@react-google-maps/api'
 import data from "../components/data/test.json"
 
 const center = {
@@ -19,15 +13,30 @@ const defaultPosition = {
     lng:-122.0536747707009
 };
 
-const onLoad = infoWindow => {
-    console.log('infoWindow: ', infoWindow)
-  }
 
 class Map extends React.Component {
     state = {
         markerposition: defaultPosition,
-        place: "Default"
+        place: "Default",
+        digit: 0
     }
+
+    onTimerEvent = () => {
+        console.log("DO SOMETHING!");
+    }
+
+    // componentDidMount = () => {
+    //     this.myTimer = setInterval(() => {
+    //         this.setState((prevState) => ({
+    //             digit: prevState.digit + 1
+    //         }));
+    //     }, 1000) // Increment every 5 Seconds
+    // }
+
+    // componentWillUnmount = () => {
+    //     clearInterval(this.myTimer);
+    // }
+    
 
     onMouseOverEvent = (place) => {
         this.setState({
@@ -41,10 +50,13 @@ class Map extends React.Component {
         return (
             <div className="map">
                 <div className="google-map">
+                    {/* <div>
+                        Timer: {this.state.digit}
+                    </div> */}
                     <LoadScript
                         googleMapsApiKey="AIzaSyASTDssYDFH7WAYmpavSLgcBqFopJVf87w">
                         <GoogleMap
-                            mapContainerStyle={ {width: '400px', height: '400px'}}
+                            mapContainerStyle={ {width: '100%', height: '100%'}}
                             center={center}
                             zoom={15}
                         >
@@ -76,8 +88,7 @@ class Map extends React.Component {
                               }}
                             position = {this.state.markerposition}>  
                             </Marker>
-                        
-                        
+                       
                         </GoogleMap>
                     </LoadScript>
                     

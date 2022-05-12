@@ -5,7 +5,6 @@ import List from "@mui/icons-material/List";
 import { IconButton, Menu } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { blueGrey } from "@mui/material/colors";
-import { MenuList, MenuItem } from "@mui/material";
 
 const HomeMobile = ({ location, zoom }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);

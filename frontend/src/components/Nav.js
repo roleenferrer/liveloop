@@ -5,7 +5,6 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { blueGrey } from "@mui/material/colors";
 import { Divider } from "@mui/material";
 import { Box } from "@mui/system";
-import PersonIcon from "@mui/icons-material/Person";
 
 const useStyles = makeStyles({
   buttons: {
