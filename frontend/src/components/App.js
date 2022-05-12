@@ -79,9 +79,9 @@ function App() {
           <Route path="/feature2">
             <div>This is where we implement feature2</div>
           </Route>
-          {/*Route for Feature3*/}
-          <Route path="/feature3">
-            <div>This is where we implement feature3</div>
+          {/*Route for Times*/}
+          <Route path="/times">
+            <div>This is where we implement times</div>
           </Route>
         </Switch>
       </BrowserRouter>
