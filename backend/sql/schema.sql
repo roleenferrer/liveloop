@@ -1,5 +1,6 @@
 -- DROP IF TABLES EXIST (to start fresh)
 DROP TABLE IF EXISTS buses CASCADE;
+DROP TABLE IF EXISTS members CASCADE;
 
 -- Create tables
 CREATE TABLE Buses(
@@ -10,3 +11,5 @@ CREATE TABLE Buses(
   active BOOLEAN,
   PRIMARY KEY (bus_id)
 );
+
+CREATE TABLE Members(id UUID UNIQUE PRIMARY KEY DEFAULT gen_random_uuid(), member JSONB);

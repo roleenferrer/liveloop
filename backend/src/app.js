@@ -7,6 +7,8 @@ const path = require('path');
 const OpenApiValidator = require('express-openapi-validator');
 
 const tracker = require('./tracker');
+const user = require('./users')
+const auth = require('./auth');
 
 const app = express();
 app.use(express.json());
@@ -26,12 +28,19 @@ app.use(
   }),
 );
 
+// Post authenticate to login
+app.post('/authenticate', auth.authenticate);
 // Your routes go here - write them in a new component in it's own .js file
 app.get('/v0/location', tracker.getLocation);
+// Get user account
+app.get('/v0/user', user.getUser);
+// Post user account
+app.post('/v0/user', user.postUser);
 
 app.use((err, req, res, next) => {
   res.status(err.status).json({
     message: err.message,
+
     errors: err.errors,
     status: err.status,
   });

@@ -5,7 +5,6 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { blueGrey } from "@mui/material/colors";
 import { Divider } from "@mui/material";
 import { Box } from "@mui/system";
-import PersonIcon from "@mui/icons-material/Person";
 
 const useStyles = makeStyles({
   buttons: {
@@ -89,14 +88,14 @@ function Nav() {
               <Button
                 size="large"
                 className={classes.feature}
-                id="feature3"
+                id="times"
                 variant="contained"
                 disableElevation={true}
                 color="feature"
-                onClick={console.log("Feature3 Clicked")}
-                href="/feature3"
+                onClick={console.log("Times Clicked")}
+                href="/times"
               >
-                <text className={classes.ftext}>Feature3</text>
+                <text className={classes.ftext}>Times</text>
               </Button>
             </div>
             <Divider sx={{ borderBottomWidth: 3 }} />

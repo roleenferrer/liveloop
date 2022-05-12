@@ -5,7 +5,6 @@ import List from "@mui/icons-material/List";
 import { IconButton, Menu } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { blueGrey } from "@mui/material/colors";
-import { MenuList, MenuItem } from "@mui/material";
 
 const HomeMobile = ({ location, zoom }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -16,14 +15,10 @@ const HomeMobile = ({ location, zoom }) => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
   const useStyles = makeStyles({
     menubar: {
       backgroundColor: blueGrey[900],
-    },
-    icon: {
-      fontSize: "inherit",
-      color: "white",
+      display: "flex",
     },
   });
   const classes = useStyles();
@@ -37,7 +32,7 @@ const HomeMobile = ({ location, zoom }) => {
           aria-haspopup="true"
           aria-expanded={open ? "true" : undefined}
         >
-          <List className={classes.icon} />
+          <List style={{ fontSize: 40, color: "white" }} />
         </IconButton>
         <Menu
           anchorEl={anchorEl}
@@ -51,8 +46,9 @@ const HomeMobile = ({ location, zoom }) => {
             elevation: 0,
             sx: {
               overflow: "visible",
-              filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
+              filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.40))",
               mt: 1.5,
+              backgroundColor: blueGrey[900],
               "& .MuiAvatar-root": {
                 width: 32,
                 height: 32,
@@ -64,10 +60,10 @@ const HomeMobile = ({ location, zoom }) => {
                 display: "block",
                 position: "absolute",
                 top: 0,
-                right: 14,
+                left: 14,
                 width: 10,
                 height: 10,
-                bgcolor: "background.paper",
+                bgcolor: blueGrey[900],
                 transform: "translateY(-50%) rotate(45deg)",
                 zIndex: 0,
               },

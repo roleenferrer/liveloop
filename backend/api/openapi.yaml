@@ -9,6 +9,51 @@ servers:
   - url: http://localhost:3010/v0
 
 paths:
+  /user:
+    get:
+      description: Return user specified by email and password
+      parameters:
+      - in: query
+        name: email
+        description: Email to search DB with
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: User found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetUser'
+        404:
+          description: User not found (email or password incorrect)
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      description: Insert user into database
+      requestBody:
+        description: User name, email, and encrypted password to add
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostUser'
+      responses:
+        201:
+          description: User inserted successfully
+        400:
+          description: Incorrect properties
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
   /location:
     get:
       description: Get coordinate and route of specific shuttle
@@ -40,7 +85,7 @@ components:
       required:
         - code
         - message
-    
+
     BusLocation:
       type: object
       properties:
@@ -62,3 +107,33 @@ components:
         - latitude
         - direction
         - active
+
+    GetUser:
+      type: object
+      properties:
+        member:
+          type: object
+          properties:
+            member:
+              type: object
+              properties:
+                hash:
+                  type: string
+                name:
+                  type: string
+                email:
+                  type: string
+              required:
+                - name
+                - email
+    PostUser:
+      type: object
+      properties:
+        fname:
+          type: string
+        lname:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
