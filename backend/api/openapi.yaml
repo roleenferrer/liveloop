@@ -92,9 +92,11 @@ components:
         bus_id:
           type: integer
         longitude:
-          type: integer
+          type: number
+          format: double
         latitude:
-          type: integer
+          type: number
+          format: double
         direction:
           type: string
         active:
