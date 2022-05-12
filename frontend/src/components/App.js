@@ -1,24 +1,41 @@
 import React from "react";
-import Map from "./Map.jsx";
-import Nav from "./Nav.js";
-import { makeStyles } from "@mui/styles";
+import { useState, useCallback, useEffect } from "react";
+import Home from "./Home.js";
+import HomeMobile from "./HomeMobile.js";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Login from "./Login";
 import CreateAccount from "./CreateAccount";
 import GetLocation from "./GetLocation";
 
-const useStyles = makeStyles({
-  nav: {
-    position: "absolute",
-    width: "100%",
-    opacity: 0.8,
-    zIndex: 9,
-  },
-  map: {
-    height: "100vh",
-  },
-});
+import Times from "./Times.js";
+
+const zoomlevel = 15;
+const useMediaQuery = (width) => {
+  const [targetReached, setTargetReached] = useState(false);
+
+  const updateTarget = useCallback((e) => {
+    if (e.matches) {
+      setTargetReached(true);
+    } else {
+      setTargetReached(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    const media = window.matchMedia(`(max-width: ${width}px)`);
+    media.addEventListener("change", updateTarget);
+
+    // Check on mount (callback is not called until a change occurs)
+    if (media.matches) {
+      setTargetReached(true);
+    }
+
+    return () => media.removeEventListener("change", updateTarget);
+  }, []);
+
+  return targetReached;
+};
 
 const location = {
   address: "University of California, Santa Cruz",
@@ -28,25 +45,23 @@ const location = {
 
 // Primary function for loading app
 function App() {
-  const classes = useStyles();
+  const isBreakpoint = useMediaQuery(750);
   return (
     <React.Fragment>
       <BrowserRouter>
         <Switch>
           {/*Route for Homepage*/}
           <Route path="/" exact>
-            <div className="container" style={{ position: "relative" }}>
-              <div className={classes.nav}>
-                <Nav />
-              </div>
-              {/* <GetLocation location = {location}/> */}
-              <div className={classes.map}>
-                <Map
-                  className={classes.map}
-                  location={location}
-                  zoomLevel={15}
-                />
-              </div>
+            <div>
+              {isBreakpoint ? (
+                <div>
+                  <HomeMobile location={location} zoom={zoomlevel} />
+                </div>
+              ) : (
+                <div>
+                  <Home location={location} zoom={zoomlevel} />
+                </div>
+              )}
             </div>
           </Route>
 
@@ -54,25 +69,21 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
-
           {/*Route for Account  Creation*/}
           <Route path="/createaccount">
             <CreateAccount />
           </Route>
-
           {/*Route for Feature1*/}
           <Route path="/feature1">
             <div>This is where we implement feature1</div>
           </Route>
-
           {/*Route for Feature2*/}
           <Route path="/feature2">
             <div>This is where we implement feature2</div>
           </Route>
-
-          {/*Route for Feature3*/}
-          <Route path="/feature3">
-            <div>This is where we implement feature3</div>
+          {/*Route for Times*/}
+          <Route path="/times">
+            <Times location={location} zoom={zoomlevel} />
           </Route>
         </Switch>
       </BrowserRouter>

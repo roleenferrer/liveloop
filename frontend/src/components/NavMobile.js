@@ -10,10 +10,6 @@ const useStyles = makeStyles({
   buttons: {
     display: "block",
     backgroundColor: blueGrey[900],
-    height: "100vh",
-  },
-  logo: {
-    width: "80%",
   },
   feature: {
     "&:hover": {
@@ -37,7 +33,7 @@ const useThemes = createTheme({
   },
 });
 // Primary function for loading app
-function Nav() {
+function NavMobile() {
   const classes = useStyles();
   return (
     <React.Fragment>
@@ -48,11 +44,11 @@ function Nav() {
               <Button
                 size="large"
                 id="logo"
-                className={classes.logo}
+                className={classes.feature}
                 onClick={console.log("Home Clicked")}
                 href="/"
               >
-                <img alt="Logo" src="./clear_logo.png" width="100%" />
+                <text className={classes.ftext}>Home</text>
               </Button>
             </div>
             <Divider sx={{ borderBottomWidth: 3 }} />
@@ -88,14 +84,14 @@ function Nav() {
               <Button
                 size="large"
                 className={classes.feature}
-                id="times"
+                id="feature3"
                 variant="contained"
                 disableElevation={true}
                 color="feature"
-                onClick={console.log("Times Clicked")}
-                href="/times"
+                onClick={console.log("Feature3 Clicked")}
+                href="/feature3"
               >
-                <text className={classes.ftext}>Times</text>
+                <text className={classes.ftext}>Feature3</text>
               </Button>
             </div>
             <Divider sx={{ borderBottomWidth: 3 }} />
@@ -119,4 +115,4 @@ function Nav() {
     </React.Fragment>
   );
 }
-export default Nav;
+export default NavMobile;
