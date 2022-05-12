@@ -6,6 +6,8 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Login from "./Login";
 import CreateAccount from "./CreateAccount";
+import GetLocation from "./GetLocation";
+
 import Times from "./Times.js";
 
 const zoomlevel = 15;
@@ -35,7 +37,6 @@ const useMediaQuery = (width) => {
   return targetReached;
 };
 
-// test!
 const location = {
   address: "University of California, Santa Cruz",
   lat: 36.988230225431984,
