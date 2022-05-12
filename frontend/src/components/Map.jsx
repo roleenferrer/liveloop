@@ -13,7 +13,6 @@ const defaultPosition = {
     lng:-122.0536747707009
 };
 
-
 class Map extends React.Component {
     state = {
         markerposition: defaultPosition,
@@ -104,12 +103,5 @@ class Map extends React.Component {
     }
 }
 
-
-// const LocationPin = ({ text }) => (
-// <div className="pin">
-//     <Icon icon={locationIcon} className="pin-icon" />
-//     <p className="pin-text">{text}</p>
-// </div>
-// )
 
 export default Map
