@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Login from "./Login";
 import CreateAccount from "./CreateAccount";
+import Times from "./Times.js";
 
 const zoomlevel = 15;
 const useMediaQuery = (width) => {
@@ -79,9 +80,9 @@ function App() {
           <Route path="/feature2">
             <div>This is where we implement feature2</div>
           </Route>
-          {/*Route for Feature3*/}
-          <Route path="/feature3">
-            <div>This is where we implement feature3</div>
+          {/*Route for Times*/}
+          <Route path="/times">
+            <Times location={location} zoom={zoomlevel} />
           </Route>
         </Switch>
       </BrowserRouter>

@@ -88,14 +88,14 @@ function Nav() {
               <Button
                 size="large"
                 className={classes.feature}
-                id="feature3"
+                id="times"
                 variant="contained"
                 disableElevation={true}
                 color="feature"
-                onClick={console.log("Feature3 Clicked")}
-                href="/feature3"
+                onClick={console.log("Times Clicked")}
+                href="/times"
               >
-                <text className={classes.ftext}>Feature3</text>
+                <text className={classes.ftext}>Times</text>
               </Button>
             </div>
             <Divider sx={{ borderBottomWidth: 3 }} />
