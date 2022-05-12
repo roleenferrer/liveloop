@@ -102,7 +102,7 @@ const Map = ({ location, zoomLevel }) => (
 
 const LocationPin = ({ text }) => (
 <div className="pin">
-    <Icon icon={locationIcon} className="pin-icon" />
+    <Icon icon={locationIcon} className="pin-icon" style={{color: "blue", minWidth:"100%"}}/>
     <p className="pin-text">{text}</p>
 </div>
 )
