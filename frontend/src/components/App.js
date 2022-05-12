@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Login from "./Login";
 import CreateAccount from "./CreateAccount";
+import GetLocation from "./GetLocation";
 
 const useStyles = makeStyles({
   nav: {
@@ -19,7 +20,6 @@ const useStyles = makeStyles({
   },
 });
 
-// test2!
 const location = {
   address: "University of California, Santa Cruz",
   lat: 36.988230225431984,
@@ -39,6 +39,7 @@ function App() {
               <div className={classes.nav}>
                 <Nav />
               </div>
+              {/* <GetLocation location = {location}/> */}
               <div className={classes.map}>
                 <Map
                   className={classes.map}
