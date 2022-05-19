@@ -1,11 +1,7 @@
 import React from "react";
-import Map from "./Map.jsx";
 import { makeStyles } from "@mui/styles";
-import Button from "@mui/material/Button";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { createTheme } from "@mui/material/styles";
 import { blueGrey } from "@mui/material/colors";
-import { Divider } from "@mui/material";
-import { Box } from "@mui/system";
 
 const useStyles = makeStyles({
   nav: {
@@ -17,6 +13,10 @@ const useStyles = makeStyles({
     width: "50%",
     height: "100hv",
   },
+  body: {},
+  text: {
+    color: "white",
+  },
 });
 
 const useThemes = createTheme({
@@ -27,17 +27,14 @@ const useThemes = createTheme({
   },
 });
 
-function Tables() {
-
-}
+function Tables() {}
 
 const Times = ({ location, zoom }) => {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <div> times?</div>
-      <div className={classes.map}>
-        <Map location={location} zoomLevel={zoom}></Map>
+      <div className={classes.body}>
+        <text className={classes.text}>TIMES</text>
       </div>
     </React.Fragment>
   );
