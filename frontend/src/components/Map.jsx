@@ -15,7 +15,10 @@ const defaultPosition = {
 
 class Map extends React.Component {
     state = {
-        markerposition: defaultPosition,
+        shuttle1: defaultPosition,
+        shuttle2: defaultPosition,
+        shuttle3: defaultPosition,
+        shuttle4: defaultPosition,
         place: "Default",
         digit: 0
     }
@@ -24,17 +27,30 @@ class Map extends React.Component {
         console.log("DO SOMETHING!");
     }
 
-    // componentDidMount = () => {
-    //     this.myTimer = setInterval(() => {
-    //         this.setState((prevState) => ({
-    //             digit: prevState.digit + 1
-    //         }));
-    //     }, 1000) // Increment every 5 Seconds
-    // }
+    componentDidMount = () => {
+        this.myTimer = setInterval(() => {
+            fetch('http://localhost:3010/v0/location')
+                .then((response) => {
+                    if (!response.ok) {
+                        throw response;
+                    }
+                    return response.json();
+                })
+                .then((json) => {
+                    this.setState({shuttle1: {lat: json[0].longitude, lng: json[0].latitude}})
+                    this.setState({shuttle2: {lat: json[1].longitude, lng: json[1].latitude}})
+                    this.setState({shuttle3: {lat: json[2].longitude, lng: json[2].latitude}})
+                    this.setState({shuttle4: {lat: json[3].longitude, lng: json[3].latitude}})
+                })
+                .catch((error) => {
+                    alert(`ERROR: ${error.toString()}`);
+                });
+        }, 6000) // Increment every 2 Seconds
+    }
 
-    // componentWillUnmount = () => {
-    //     clearInterval(this.myTimer);
-    // }
+    componentWillUnmount = () => {
+        clearInterval(this.myTimer);
+    }
     
 
     onMouseOverEvent = (place) => {
@@ -79,13 +95,52 @@ class Map extends React.Component {
                              icon={{
                                 path:
                                   "M8 12l-4.7023 2.4721.898-5.236L.3916 5.5279l5.2574-.764L8 0l2.3511 4.764 5.2574.7639-3.8043 3.7082.898 5.236z",
-                                fillColor: "yellow",
+                                fillColor: "blue",
                                 fillOpacity: 0.9,
                                 scale: 1,
                                 strokeColor: "gold",
                                 strokeWeight: 1,
                               }}
-                            position = {this.state.markerposition}>  
+                            position = {this.state.shuttle1}>  
+                            </Marker>
+
+                            <Marker 
+                             icon={{
+                                path:
+                                  "M8 12l-4.7023 2.4721.898-5.236L.3916 5.5279l5.2574-.764L8 0l2.3511 4.764 5.2574.7639-3.8043 3.7082.898 5.236z",
+                                fillColor: "blue",
+                                fillOpacity: 0.9,
+                                scale: 1,
+                                strokeColor: "gold",
+                                strokeWeight: 1,
+                              }}
+                            position = {this.state.shuttle2}>  
+                            </Marker>
+
+                            <Marker 
+                             icon={{
+                                path:
+                                  "M8 12l-4.7023 2.4721.898-5.236L.3916 5.5279l5.2574-.764L8 0l2.3511 4.764 5.2574.7639-3.8043 3.7082.898 5.236z",
+                                fillColor: "red",
+                                fillOpacity: 0.9,
+                                scale: 1,
+                                strokeColor: "gold",
+                                strokeWeight: 1,
+                              }}
+                            position = {this.state.shuttle3}>  
+                            </Marker>
+
+                            <Marker 
+                             icon={{
+                                path:
+                                  "M8 12l-4.7023 2.4721.898-5.236L.3916 5.5279l5.2574-.764L8 0l2.3511 4.764 5.2574.7639-3.8043 3.7082.898 5.236z",
+                                fillColor: "red",
+                                fillOpacity: 0.9,
+                                scale: 1,
+                                strokeColor: "gold",
+                                strokeWeight: 1,
+                              }}
+                            position = {this.state.shuttle4}>  
                             </Marker>
                        
                         </GoogleMap>
