@@ -20,12 +20,6 @@ const useStyles = makeStyles({
   },
 });
 
-//const [value, setValue] = React.useState('');
-
-//const handleChange = (event) => {
- //   setValue(event.target.value);
-//};
-
 const options = [
   { label: 'Main Entrance', value: 'Main Entrance'},
   { label: 'Lower Campus', value: 'Lower Campus'},
@@ -43,32 +37,34 @@ const options = [
   { label: 'Empire Grade', value: 'Empire Grade'}
 ];
 
-//const handleChange = (event) => {
-//    setValue(event.target.value);
-//};
-
 const Times = ({ location, zoom }) => {
   const classes = useStyles();
+  const [start, setValue] = useState('');
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
   return (
     <React.Fragment>
       <div className={classes.dropone}>
         <label>
-        Select starting location:   
-        <select>
-         {options.map((option) => (
-            <option value={option.value}>{option.label}</option>
-          ))}
-        </select>
-      </label>
+          Select starting location:   
+          <select value={start} onChange={handleChange}>
+            {options.map((option) => (
+              <option value={option.value}>{option.label}</option>
+            ))}
+          </select>
+        </label>
 
-      <label>
-        Select destination:   
-        <select>
-          {options.map((option) => (
-            <option value={option.value}>{option.label}</option>
-          ))}
-        </select>
-      </label>
+        <label> u selected {start} </label>
+
+        <label>
+          Select destination:   
+          <select>
+            {options.map((option) => (
+              <option value={option.value}>{option.label}</option>
+            ))}
+          </select>
+        </label>
       </div>
       <div className={classes.map}>
         <Map location={location} zoomLevel={zoom}></Map>
@@ -76,5 +72,7 @@ const Times = ({ location, zoom }) => {
     </React.Fragment>
   );
 };
+
+
 
 export default Times;
