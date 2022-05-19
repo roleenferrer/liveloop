@@ -1,11 +1,6 @@
 import React,{ useState } from "react";
 import Map from "./Map.jsx";
 import { makeStyles } from "@mui/styles";
-import { createTheme } from "@mui/material/styles";
-import { blueGrey } from "@mui/material/colors";
-import { Divider } from "@mui/material";
-import { Box } from "@mui/system";
-import data from "../components/data/test.json"
 
 const useStyles = makeStyles({
   dropone: {
