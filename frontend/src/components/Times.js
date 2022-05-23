@@ -1,6 +1,11 @@
+
+import { createTheme } from "@mui/material/styles";
+import { blueGrey } from "@mui/material/colors";
+
 import React,{ useState } from "react";
 import Map from "./Map.jsx";
 import { makeStyles } from "@mui/styles";
+
 
 const useStyles = makeStyles({
   dropone: {
@@ -13,7 +18,22 @@ const useStyles = makeStyles({
     width: "50%",
     height: "100hv",
   },
+  body: {},
+  text: {
+    color: "white",
+  },
 });
+
+
+const useThemes = createTheme({
+  palette: {
+    feature: {
+      main: blueGrey[900],
+    },
+  },
+});
+
+function Tables() {}
 
 const options = [
   { label: 'Main Entrance', value: 'Main Entrance'},
@@ -32,6 +52,7 @@ const options = [
   { label: 'Empire Grade', value: 'Empire Grade'}
 ];
 
+
 const Times = ({ location, zoom }) => {
   const classes = useStyles();
   const [start, setValue] = useState('');
@@ -40,6 +61,7 @@ const Times = ({ location, zoom }) => {
   };
   return (
     <React.Fragment>
+
       <div className={classes.dropone}>
         <label>
           Select starting location:   
@@ -63,11 +85,11 @@ const Times = ({ location, zoom }) => {
       </div>
       <div className={classes.map}>
         <Map location={location} zoomLevel={zoom}></Map>
+
       </div>
     </React.Fragment>
   );
 };
 
-
-
 export default Times;
+

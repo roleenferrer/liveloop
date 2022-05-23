@@ -26,7 +26,7 @@ const HomeMobile = ({ location, zoom }) => {
     <React.Fragment>
       <div className={classes.menubar}>
         <IconButton
-          size="large"
+          size="small"
           onClick={handleClick}
           aria-controls={open ? "drop-menu" : undefined}
           aria-haspopup="true"
@@ -47,11 +47,11 @@ const HomeMobile = ({ location, zoom }) => {
             sx: {
               overflow: "visible",
               filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.40))",
-              mt: 1.5,
+              mt: 1.25,
               backgroundColor: blueGrey[900],
               "& .MuiAvatar-root": {
-                width: 32,
-                height: 32,
+                width: 30,
+                height: 3,
                 ml: -0.5,
                 mr: 1,
               },
