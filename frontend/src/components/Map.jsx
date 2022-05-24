@@ -5,17 +5,19 @@ import data from "../components/data/test.json"
 
 const center = {
     lat: 36.988230225431984,
-    lng: -122.05822002436861
-  };
+    lng: -122.05822002436861,
+    zoom: 15
+};
 
 const defaultPosition = {
     lat: 36.9777223039389,
-    lng:-122.0536747707009
+    lng:-122.0536747707009,
 };
 
 class Map extends React.Component {
     state = {
         markerposition: defaultPosition,
+        center: center,
         place: "Default",
         digit: 0
     }
@@ -44,6 +46,32 @@ class Map extends React.Component {
         });
     };
 
+    getLocation = () => {
+        navigator.geolocation.getCurrentPosition(
+            position => {
+                this.setState({
+                    markerposition: {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    },
+                    center: {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude,
+                        zoom: 18
+                    }
+                })
+                console.log(position.coords.latitude)
+                console.log(position.coords.longitude)
+            },
+            error => {
+                console.log(error)
+                console.log(this.location.lat)
+                console.log(this.location.lng)
+            },
+            {enableHighAccuracy: true}
+        )
+    }
+
 
     render() {
         return (
@@ -52,12 +80,15 @@ class Map extends React.Component {
                     {/* <div>
                         Timer: {this.state.digit}
                     </div> */}
+                    <div>
+                        {this.getLocation()}
+                    </div>
                     <LoadScript
                         googleMapsApiKey="AIzaSyASTDssYDFH7WAYmpavSLgcBqFopJVf87w">
                         <GoogleMap
                             mapContainerStyle={ {width: '100%', height: '100%'}}
-                            center={center}
-                            zoom={15}
+                            center={this.state.center}
+                            zoom={this.state.center.zoom}
                         >
                             <Marker opacity={0.2} position={ {lat:36.9777223039389, lng:-122.0536747707009} } />
                             <Marker opacity={0.2} position={ {lat:36.981451629614874, lng:-122.05195574654519} } />
