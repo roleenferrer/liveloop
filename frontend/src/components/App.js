@@ -6,7 +6,6 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Login from "./Login";
 import CreateAccount from "./CreateAccount";
-import GetLocation from "./GetLocation";
 
 import Times from "./Times.js";
 
