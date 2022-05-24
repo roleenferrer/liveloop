@@ -115,18 +115,10 @@ app.listen(3011, () => {
       };
       pool.query(query);
 
-      if (shuttleDir == 'West') {
-        if (shuttlePos[i] == coordinates.length - 1) {
-          shuttlePos[i] = 0;
-        } else {
-          shuttlePos[i] += 1;
-        }
-      } else if (shuttleDir == 'East') {
-        if (shuttlePos[i] == 0) {
-          shuttlePos[i] = coordinates.length - 1;
-        } else {
-          shuttlePos[i] -= 1;
-        }
+      if (shuttlePos[i] == coordinates.length - 1) {
+        shuttlePos[i] = 0;
+      } else {
+        shuttlePos[i] += 1;
       }
     };
   };
