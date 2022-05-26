@@ -44,6 +44,8 @@ const location = {
 
 // Primary function for loading app
 function App() {
+  const [item, setUser] = React.useState(localStorage.getItem('user'));
+
   const isBreakpoint = useMediaQuery(750);
   return (
     <React.Fragment>
