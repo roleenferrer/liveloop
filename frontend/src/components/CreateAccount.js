@@ -10,6 +10,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
 import {useHistory} from 'react-router-dom';
+import { containerClasses } from '@mui/system';
 
 //  Source Used:
 //    https://mui.com/getting-started/templates/sign-in/
@@ -52,7 +53,7 @@ export default function CreateAccount() {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    fetch('/v0/user', {
+    fetch('http://localhost:3010/v0/user', {
       method: 'POST',
       body: JSON.stringify(postUser),
       headers: {
@@ -63,7 +64,7 @@ export default function CreateAccount() {
         if (!res.ok) {
           throw res;
         }
-        fetch('/authenticate', {
+        fetch('http://localhost:3010/authenticate', {
           method: 'POST',
           body: JSON.stringify(postUser),
           headers: {
