@@ -7,6 +7,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { blueGrey } from "@mui/material/colors";
 import { Divider } from "@mui/material";
 import { Box } from "@mui/system";
+import {useHistory} from 'react-router-dom';
 
 const useStyles = makeStyles({
   buttons: {
@@ -40,6 +41,14 @@ const useThemes = createTheme({
 });
 // Primary function for loading app
 function Nav() {
+  const user = JSON.parse(localStorage.getItem('user'));
+  console.log(user);
+  const history = useHistory();
+
+  const logout = () => {
+    localStorage.removeItem('user');
+    history.push('/login');
+  };
   const [state, setState] = React.useState({
     left: false,
   });
@@ -82,6 +91,7 @@ function Nav() {
             <Divider sx={{ borderBottomWidth: 3 }} />
             <div>
               <Button
+              
                 size="large"
                 className={classes.feature}
                 id="feature1"
@@ -108,6 +118,7 @@ function Nav() {
                 <text className={classes.ftext}>Feature2</text>
               </Button>
             </div>
+            
             <div>
               {["left"].map((anchor) => (
                 <React.Fragment key={anchor}>
@@ -136,6 +147,7 @@ function Nav() {
             <Divider sx={{ borderBottomWidth: 3 }} />
             <div>
               <Button
+                style={{display: user ? 'none' : 'inline'}}
                 size="large"
                 className={classes.person}
                 id="login"
@@ -147,6 +159,27 @@ function Nav() {
               >
                 <text className={classes.ftext}>Login</text>
               </Button>
+            </div>
+            <div>
+              <Button
+                id = 'logoutButton'
+                style={{display: user ? 'inline' : 'none'}}
+                size="large"
+                className={classes.person}
+                variant="contained"
+                disableElevation={true}
+                color="feature"
+                onClick={logout}
+                href="/"
+              >
+                <text className={classes.ftext}>Log Out</text>
+              </Button>
+            </div>
+            
+            <div>
+              <h2 id="welcome">
+                  <text className={classes.ftext}>{user ? `Hello, ${user.name}` : ''}</text>
+              </h2>
             </div>
           </ThemeProvider>
         </div>
