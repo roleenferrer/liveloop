@@ -1,14 +1,15 @@
 import React from 'react';
 import './style/map.css';
 import {Marker, GoogleMap, LoadScript, InfoWindow} from '@react-google-maps/api';
-import data from "../components/data/test.json";
 
+// Default for center of map
 const center = {
     lat: 36.988230225431984,
     lng: -122.05822002436861,
     zoom: 15
 };
 
+// Default for center of map positon at UCSC
 const defaultPosition = {
     lat: 36.9777223039389,
     lng:-122.0536747707009,
@@ -17,20 +18,19 @@ const defaultPosition = {
 class Map extends React.Component {
     state = {
 
-        markerposition: defaultPosition,
+        markerposition: defaultPosition,    // Controls marker positon for Geolocation
 
-        center: center,
+        center: center,                     // Sets center of map for Geolocation
 
         icon: "./bus_icon.png",
 
+        // Positions to represent locations of loop buses
         shuttle1: defaultPosition,
         shuttle2: defaultPosition,
         shuttle3: defaultPosition,
         shuttle4: defaultPosition,
 
-        place: "Default",
-        digit: 0,
-        showInfo: ''
+        showInfo: ''                        // Current string for info window component
     };
 
     locations = [
@@ -64,11 +64,6 @@ class Map extends React.Component {
         {lat:36.98289406053649, lng:-122.06269942075527, name: "Main Gate"}
     ];
 
-    onTimerEvent = () => {
-        console.log("DO SOMETHING!");
-
-    };
-
     componentDidMount = () => {
         this.myTimer = setInterval(() => {
             fetch('http://localhost:3010/v0/location')
@@ -93,8 +88,6 @@ class Map extends React.Component {
     componentWillUnmount = () => {
         clearInterval(this.myTimer);
     }
-    
-
 
     handleToggleOpen = (id) => {
         this.setState({
@@ -157,9 +150,6 @@ class Map extends React.Component {
         return (
             <div className="map">
                 <div className="google-map">
-                    {/* <div>
-                        Timer: {this.state.digit}
-                    </div> */}
                     <div>
                         {this.getLocation()}
                     </div>
@@ -222,24 +212,14 @@ class Map extends React.Component {
                                 strokeWeight: 1,
                               }}
 
-
                             position = {this.state.shuttle4}>  
                             </Marker>
-                       
                         </GoogleMap>
                     </LoadScript>
-                    
-                    {data.map((place, index) => (
-                    <p key={index} onMouseOver={() => this.onMouseOverEvent(place)}>
-                        {place.name}
-                    </p>
-                    ))}
-                
                 </div>
             </div>
         )
     }
 }
-
 
 export default Map
