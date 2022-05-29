@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Login from "./Login";
 import CreateAccount from "./CreateAccount";
 import Times from "./Times.js";
+import MetroTimes from "./MetroTimes.js";
 
 const zoomlevel = 15; // Default zoom level for map
 
@@ -75,7 +76,7 @@ function App() {
           </Route>
           {/*Route for Feature1*/}
           <Route path="/feature1">
-            <div>This is where we implement feature1</div>
+            <MetroTimes/>
           </Route>
           {/*Route for Feature2*/}
           <Route path="/feature2">

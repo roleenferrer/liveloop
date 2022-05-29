@@ -52,7 +52,7 @@ function NavMobile() {
                 onClick={console.log("Feature1 Clicked")}
                 href="/feature1"
               >
-                <text className={classes.ftext}>Feature1</text>
+                <text className={classes.ftext}>Metro Times</text>
               </Button>
             </div>
             <div>
