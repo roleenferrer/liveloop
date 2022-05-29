@@ -45,23 +45,23 @@ class Map extends React.Component {
         //East Field House
         {lat:36.994304362434605, lng:-122.05551753750245, name: "East Field House"},
         //Crown and Merill College
-        {lat:36.997539844191074, lng:-122.05506544030388, name: "Crown and Merill College"},
+        {lat:36.997539844191074, lng:-122.05506544030388, name: "Cowell and Stevenson"},
         //College 9/10
-        {lat:36.99904725113633, lng:-122.05514548284367, name: "College 9/10"} ,
+        {lat:36.99904725113633, lng:-122.05514548284367, name: "Crown and Merill College"} ,
         //Sciences Hill
-        {lat:36.99999651351248, lng:-122.0583279747162, name: "Science Hill"},
+        {lat:36.99999651351248, lng:-122.0583279747162, name: "College 9/10"},
         //Kresge
-        {lat:37.00002893600196, lng:-122.062329159318, name: "Kresge"},
+        {lat:37.00002893600196, lng:-122.062329159318, name: "Science Hill"},
         //Racheal Carsons
-        {lat:36.99938734456224, lng:-122.06454996723684, name: "Racheal Carsons"},
+        {lat:36.99938734456224, lng:-122.06454996723684, name: "Kresge"},
         //Oakes Collegse
-        {lat:36.99313410613227, lng:-122.06514372032822, name: "Oakes College"},
+        {lat:36.99313410613227, lng:-122.06514372032822, name: "Racheal Carsons"},
         //Arboretum
-        {lat:36.99191322700488, lng:-122.06679155373752, name: "Arboretum"},
+        {lat:36.99191322700488, lng:-122.06679155373752, name: "Oakes College"},
         //High and Western Dr
-        {lat:36.99004580052091, lng:-122.06718599652353, name: "High and Western Dr"},
+        {lat:36.99004580052091, lng:-122.06718599652353, name: "Arboretum"},
         //Main Gate
-        {lat:36.98289406053649, lng:-122.06269942075527, name: "Main Gate"}
+        {lat:36.98289406053649, lng:-122.06269942075527, name: "High and Western Dr"}
     ];
 
     componentDidMount = () => {
