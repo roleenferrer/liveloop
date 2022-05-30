@@ -1,38 +1,52 @@
 import React from "react";
+import { AppBar } from "@mui/material";
+import { Tabs, Tab, Box } from "@mui/material";
+import { blueGrey } from "@mui/material/colors";
 
-const options = [
-  {busNum: 15, dow: "Weekdays", src: "../metrotimes/15Weekdays.png"},
-  {busNum: 18, dow: "Weekdays", src: "../metrotimes/18Weekdays.png"},
-  {busNum: 18, dow: "Weekends", src: "../metrotimes/18Weekends.png"},
-  {busNum: 19, dow: "Weekdays", src: "../metrotimes/19Weekdays.png"},
-  {busNum: 19, dow: "Weekends", src: "../metrotimes/19Weekends.png"},
-  {busNum: 20, dow: "Weekdays", src: "../metrotimes/20Weekdays.png"},
-  {busNum: 20, dow: "Weekends", src: "../metrotimes/20Weekends.png"},
-  {busNum: 22, dow: "Weekdays", src: "../metrotimes/22Weekdays.png"}
-];
+function MetroTimes() {
+  const schedules = [
+    { name: "15 Weekdays", src: "../metrotimes/15WD.png" },
+    { name: "18 Weekdays", src: "../metrotimes/18WD.png" },
+    { name: "18 Weekends", src: "../metrotimes/18WE.png" },
+    { name: "19 Weekdays", src: "../metrotimes/19WD.png" },
+    { name: "19 Weekends", src: "../metrotimes/19WE.png" },
+    { name: "20 Weekdays", src: "../metrotimes/20WD.png" },
+    { name: "20 Weekends", src: "../metrotimes/20WE.png" },
+    { name: "22 Weekdays", src: "../metrotimes/22WD.png" },
+  ];
 
-class MetroTimes extends React.Component {
-    state = {
-        busNumber: 0,
-        currentSchedule: "../bus_icon.png"
-    }
+  const [selectedTab, setSelectedTab] = React.useState(0);
 
-    handleMouseClick = (bus) => {
-        this.setState({currentSchedule: bus.src});
-    }
+  const handleChange = (event, newValue) => {
+    setSelectedTab(newValue);
+  };
 
-    render () {
-        return (
-            <div>
-                {options.map((bus,index) => (
-                    <p key={index} onClick={() => this.handleMouseClick(bus)}>
-                        {bus.busNum} {bus.dow}
-                    </p>
-                ))}
-                <img src={this.state.currentSchedule} alt="NONE!"></img>
-            </div>
-        )
-    }
+  return (
+    <Box sx={{ width: "100%" }}>
+      <AppBar style={{ background: blueGrey[900] }}>
+        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+          <Tabs value={selectedTab} onChange={handleChange} centered>
+            {schedules.map((bus, i) => (
+              <Tab key={i} label={bus.name} style={{ color: "white" }} />
+            ))}
+          </Tabs>
+        </Box>
+      </AppBar>
+
+      {schedules.map((bus, i) => (
+        <div
+          style={{
+            textAlign: "center",
+            background: blueGrey[800],
+          }}
+        >
+          {selectedTab === i && (
+            <img src={bus.src} style={{ marginTop: "5%" }} alt="" />
+          )}
+        </div>
+      ))}
+    </Box>
+  );
 }
 
 export default MetroTimes;
