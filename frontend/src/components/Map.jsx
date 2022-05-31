@@ -64,7 +64,7 @@ class Map extends React.Component {
                 .catch((error) => {
                     // alert(`ERROR: ${error.toString()}`);
                 });
-        }, 700) // Increment every 6 Seconds
+        }, 1200) // Increment every 6 Seconds
     }
 
     componentWillUnmount = () => {

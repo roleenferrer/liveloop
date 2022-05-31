@@ -617,5 +617,5 @@ app.listen(3011, () => {
 
   setInterval(() => {
     updatePositions();
-  }, 700);
+  }, 1200);
 });
