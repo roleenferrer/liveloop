@@ -13,7 +13,7 @@ const useStyles = makeStyles({
   },
   feature: {
     "&:hover": {
-      backgroundColor: blueGrey[800],
+      backgroundColor: blueGrey[900],
     },
   },
   ftext: {

@@ -6,6 +6,10 @@ import { IconButton, Menu } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { blueGrey } from "@mui/material/colors";
 
+/* Makes the whole page the map with a navigation bar on top
+ * By clicking on the list icon, a drop down menu appears showing
+ * paths to the features implemented for this application
+ */
 const HomeMobile = ({ location, zoom }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -34,6 +38,7 @@ const HomeMobile = ({ location, zoom }) => {
         >
           <List style={{ fontSize: 40, color: "white" }} />
         </IconButton>
+        {/* The dropdown menu settings */}
         <Menu
           anchorEl={anchorEl}
           id="drop-menu"
@@ -70,6 +75,7 @@ const HomeMobile = ({ location, zoom }) => {
             },
           }}
         >
+          {/* Open the mobile version of the navigation */}
           <NavMobile />
         </Menu>
       </div>

@@ -4,6 +4,7 @@ import { Tabs, Tab, Box } from "@mui/material";
 import { blueGrey } from "@mui/material/colors";
 
 function MetroTimes() {
+  // All schedules for SC Metro
   const schedules = [
     { name: "15 Weekdays", src: "../metrotimes/15WD.png" },
     { name: "18 Weekdays", src: "../metrotimes/18WD.png" },
@@ -17,6 +18,7 @@ function MetroTimes() {
 
   const [selectedTab, setSelectedTab] = React.useState(0);
 
+  // Detect when a new tab was clicked
   const handleChange = (event, newValue) => {
     setSelectedTab(newValue);
   };
@@ -25,6 +27,7 @@ function MetroTimes() {
     <Box sx={{ width: "100%" }}>
       <AppBar style={{ background: blueGrey[900] }}>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+          {/* Generate a tab for each schedule.name*/}
           <Tabs value={selectedTab} onChange={handleChange} centered>
             {schedules.map((bus, i) => (
               <Tab key={i} label={bus.name} style={{ color: "white" }} />
@@ -33,6 +36,7 @@ function MetroTimes() {
         </Box>
       </AppBar>
 
+      {/* Generate the window that hosts the schedule goes along with each tab */}
       {schedules.map((bus, i) => (
         <div
           style={{

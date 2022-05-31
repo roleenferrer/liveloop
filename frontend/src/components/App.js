@@ -46,7 +46,7 @@ const location = {
 
 // Primary function for loading app
 function App() {
-
+  // Depending on the size of Breakpoint, we determine if we use the mobile or the normal view
   const isBreakpoint = useMediaQuery(750); // Breakpoint for reactive UI
   return (
     <React.Fragment>
@@ -74,9 +74,9 @@ function App() {
           <Route path="/createaccount">
             <CreateAccount />
           </Route>
-          {/*Route for Feature1*/}
+          {/*Route for MetroTimes*/}
           <Route path="/feature1">
-            <MetroTimes/>
+            <MetroTimes />
           </Route>
           {/*Route for Feature2*/}
           <Route path="/feature2">
