@@ -10,6 +10,7 @@ const pool = new Pool({
   password: process.env.POSTGRES_PASSWORD,
 });
 
+// Get existing user from 'members' database
 exports.getUser = async (req, res) => {
   let email;
   if (req.query) {
@@ -37,6 +38,7 @@ exports.getUser = async (req, res) => {
   }
 };
 
+// Post user into 'members' database
 exports.postUser = async (req, res) => {
   const fullName = req.body.fname + ' ' + req.body.lname;
   const user = await this.getUser({email: req.body.email});

@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 const secrets = require('./data/secrets.json');
 const dbUser = require('./users');
 
-// Based on AuthenticatedBookExample from class
+// Based on AuthenticatedBookExample from CSE 186 class
 
 // searching database for user with email (email)
 // if user is found, checks that passwords match
