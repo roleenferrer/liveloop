@@ -1,0 +1,34 @@
+Login User components:
+
+    In app.js, 
+    - exists GET request to /v0/users
+
+    In user.js,
+    - exists getUser function that pulls user login data from 'members' database
+
+    In auth.js,
+    - exists authenticate function that calls getUser and authenticates the given password
+
+User login testing:
+
+    To test app.js,
+    - check backend routes to see if route to GET from /v0/users exists
+
+    To test user.js,
+    - insert user into 'members' database
+      - fname: John 
+      - lname: Smith
+      - email: johnsmit@gmail.com
+      - password: appletree5
+    - call getUser() function with an non-existing email 
+      - console log "email doesn't exist"
+    - call getUser() function with an existing email (johnsmith@gmail.com)
+      - console log user information
+      - check to see if correct
+
+    To test auth.js,
+    - call getUser() function with an existing email (johnsmit@gmail.com)
+      - with invalid password
+        - console log "email or password is wrong"
+      - with valid password (appletree5)
+        - console log "successfully logged in 

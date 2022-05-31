@@ -1,0 +1,22 @@
+Create User components:
+
+    In app.js,
+    - exists POST request to 'members' database
+
+    In user.js,
+    - exists postUser function that INSERTS data into 'members' databse using the POST route
+
+Create User testing:
+
+    To test app.js,
+    - check backend routes to see if route to POST to /v0/users exists
+
+    To test user.js,
+    - insert new user data into 'members' database
+      - fname: John
+      - lname: Smith
+      - email: johnsmith@gmail.com 
+      - password: appletree5 
+    - send GET request of johnsmith@gmail.com 
+      - if request is successfull, terminal says "successfull"
+      - if request is unsuccessfull, terminal says error message
