@@ -55,20 +55,7 @@ function NavMobile() {
                 <text className={classes.ftext}>Metro Times</text>
               </Button>
             </div>
-            <div>
-              <Button
-                size="large"
-                className={classes.feature}
-                id="feature2"
-                variant="contained"
-                disableElevation={true}
-                color="feature"
-                onClick={console.log("Feature2 Clicked")}
-                href="/feature2"
-              >
-                <text className={classes.ftext}>Feature2</text>
-              </Button>
-            </div>
+
             <div>
               <Button
                 size="large"

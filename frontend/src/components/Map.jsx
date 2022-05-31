@@ -1,7 +1,6 @@
 import React from 'react'
 import './style/map.css'
 import {Marker, GoogleMap, LoadScript } from '@react-google-maps/api'
-import data from "../components/data/test.json"
 
 // Where the map is centered upon rendering
 const center = {
@@ -228,13 +227,6 @@ class Map extends React.Component {
                        
                         </GoogleMap>
                     </LoadScript>
-                    
-                    
-                    {data.map((place, index) => (
-                    <p key={index} onMouseOver={() => this.onMouseOverEvent(place)}>
-                        {place.name}
-                    </p>
-                    ))}
                 
                 </div>
             </div>
