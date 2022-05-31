@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import { createTheme } from "@mui/material/styles";
 import { blueGrey, green } from "@mui/material/colors";
 import { Radio, RadioGroup } from "@mui/material";
 import FormControlLabel from "@mui/material/FormControlLabel";
-import { makeStyles } from "@mui/styles";
 import { Typography } from "@mui/material";
 
 // list of all bus stops to choose from
