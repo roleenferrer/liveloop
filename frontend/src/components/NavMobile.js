@@ -40,17 +40,6 @@ function NavMobile() {
       <Box textAlign="center">
         <div className={classes.buttons}>
           <ThemeProvider theme={useThemes}>
-            <div>
-              <Button
-                size="large"
-                id="logo"
-                className={classes.feature}
-                onClick={console.log("Home Clicked")}
-                href="/"
-              >
-                <text className={classes.ftext}>Home</text>
-              </Button>
-            </div>
             <Divider sx={{ borderBottomWidth: 3 }} />
             <div>
               <Button
@@ -63,7 +52,7 @@ function NavMobile() {
                 onClick={console.log("Feature1 Clicked")}
                 href="/feature1"
               >
-                <text className={classes.ftext}>Feature1</text>
+                <text className={classes.ftext}>Metro Times</text>
               </Button>
             </div>
             <div>
@@ -84,14 +73,14 @@ function NavMobile() {
               <Button
                 size="large"
                 className={classes.feature}
-                id="feature3"
+                id="Times"
                 variant="contained"
                 disableElevation={true}
                 color="feature"
-                onClick={console.log("Feature3 Clicked")}
-                href="/feature3"
+                onClick={console.log("Times Clicked")}
+                href="/times"
               >
-                <text className={classes.ftext}>Feature3</text>
+                <text className={classes.ftext}>Times</text>
               </Button>
             </div>
             <Divider sx={{ borderBottomWidth: 3 }} />

@@ -55,7 +55,7 @@ export default function SignIn() {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    fetch('/authenticate', {
+    fetch('http://localhost:3010/authenticate', {
       method: 'POST',
       body: JSON.stringify(user),
       headers: {
@@ -73,7 +73,7 @@ export default function SignIn() {
         history.push('/');
       })
       .catch((err) => {
-        alert('Error logging in, please try again');
+        alert('Wrong username/password. Try again.');
       });
   };
 

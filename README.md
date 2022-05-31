@@ -1,4 +1,4 @@
-# <img src="public\logo.png" style="zoom: 25%;" />
+# <img src=".\frontend\public\logo.png" style="zoom: 25%;" />
 
 ## **A Web Application for Near-Real Time Tracking of UC Santa Cruz Loop Buses**
 
@@ -16,3 +16,7 @@ The goal of this project is to create a working near-real time web application t
 - An estimated time for a Loop Bus to arrive at a certain stop around campus
 - Integration with Santa Cruz Metro Buses (SC Metro already has a similar live map)
 - A "Stay or Walk" widget, which dictates if it would be faster for a user to walk to their destination rather than wait for the Loop Bus (during busy times of the day, it may feel like it takes forever for one to show up / bus could be full)
+
+### Installation Guide
+
+See [INSTRUCTIONS.md](https://github.com/roleenferrer/liveloop/blob/main/INSTRUCTIONS.md)

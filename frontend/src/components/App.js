@@ -3,14 +3,14 @@ import { useState, useCallback, useEffect } from "react";
 import Home from "./Home.js";
 import HomeMobile from "./HomeMobile.js";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-
 import Login from "./Login";
 import CreateAccount from "./CreateAccount";
-import GetLocation from "./GetLocation";
-
 import Times from "./Times.js";
+import MetroTimes from "./MetroTimes.js";
 
-const zoomlevel = 15;
+const zoomlevel = 15; // Default zoom level for map
+
+// Media query for asserting screen width for reactive UI
 const useMediaQuery = (width) => {
   const [targetReached, setTargetReached] = useState(false);
 
@@ -32,11 +32,12 @@ const useMediaQuery = (width) => {
     }
 
     return () => media.removeEventListener("change", updateTarget);
-  }, []);
+  }, [width, updateTarget]);
 
   return targetReached;
 };
 
+// Default location of the map, located at UCSC
 const location = {
   address: "University of California, Santa Cruz",
   lat: 36.988230225431984,
@@ -45,7 +46,8 @@ const location = {
 
 // Primary function for loading app
 function App() {
-  const isBreakpoint = useMediaQuery(750);
+
+  const isBreakpoint = useMediaQuery(750); // Breakpoint for reactive UI
   return (
     <React.Fragment>
       <BrowserRouter>
@@ -64,7 +66,6 @@ function App() {
               )}
             </div>
           </Route>
-
           {/*Route for Login*/}
           <Route path="/login">
             <Login />
@@ -75,7 +76,7 @@ function App() {
           </Route>
           {/*Route for Feature1*/}
           <Route path="/feature1">
-            <div>This is where we implement feature1</div>
+            <MetroTimes/>
           </Route>
           {/*Route for Feature2*/}
           <Route path="/feature2">

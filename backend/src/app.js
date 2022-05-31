@@ -7,7 +7,7 @@ const path = require('path');
 const OpenApiValidator = require('express-openapi-validator');
 
 const tracker = require('./tracker');
-const user = require('./users')
+const user = require('./users');
 const auth = require('./auth');
 
 const app = express();
