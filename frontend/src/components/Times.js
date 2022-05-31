@@ -71,7 +71,7 @@ function findTime(start, dest) {
 function Times() {
   const [source, setSource] = useState("");
   const [destination, setDestination] = useState("");
-
+  // Bus stops
   const options = [
     { label: "Main Entrance", value: "Main Entrance" },
     { label: "Lower Campus", value: "Lower Campus" },
@@ -105,6 +105,7 @@ function Times() {
         style={{ display: "grid", background: blueGrey[900], height: "100vh" }}
       >
         <div style={{ display: "flex" }}>
+          {/* Buttons to select a starting stop*/}
           <RadioGroup
             style={{
               float: "left",
@@ -133,6 +134,7 @@ function Times() {
               />
             ))}
           </RadioGroup>
+          {/* Buttonns to select a destination */}
           <RadioGroup
             style={{
               float: "left",
@@ -163,6 +165,7 @@ function Times() {
           </RadioGroup>
         </div>
         <div>
+          {/* Given source and destination, indicate approximately how long for bus to arrive */}
           <Typography varaint="h2" style={{ padding: "40px", color: "white" }}>
             ESTIMATED WALKING TIME FROM&nbsp;
             {source}&nbsp;TO&nbsp;{destination}

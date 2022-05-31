@@ -3,17 +3,20 @@ import './style/map.css'
 import {Marker, GoogleMap, LoadScript } from '@react-google-maps/api'
 import data from "../components/data/test.json"
 
+// Where the map is centered upon rendering
 const center = {
     lat: 36.988230225431984,
     lng: -122.05822002436861
   };
 
+// Where the map is positioned up rendering
 const defaultPosition = {
     lat: 36.9777223039389,
     lng:-122.0536747707009
 };
 
 class Map extends React.Component {
+    // The positions for the given shuttles
     state = {
         shuttle1: defaultPosition,
         shuttle2: defaultPosition,
@@ -33,6 +36,7 @@ class Map extends React.Component {
         console.log("DO SOMETHING!");
     }
 
+    // Allows "moving" markers for the buses on the map
     componentDidMount = () => {
         this.myTimer = setInterval(() => {
             fetch('http://localhost:3010/v0/location')
@@ -71,6 +75,7 @@ class Map extends React.Component {
         clearInterval(this.myTimer);
     }
     
+    // Event when mouse is over a marker
     onMouseOverEvent = (place) => {
         this.setState({
           markerposition: { lat: place.lat, lng: place.lng },
@@ -223,6 +228,7 @@ class Map extends React.Component {
                        
                         </GoogleMap>
                     </LoadScript>
+                    
                     
                     {data.map((place, index) => (
                     <p key={index} onMouseOver={() => this.onMouseOverEvent(place)}>

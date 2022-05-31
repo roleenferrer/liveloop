@@ -58,6 +58,9 @@ function Nav() {
     if (event.type === "keydown") return;
     setState({ ...state, [anchor]: open });
   };
+
+  // Pop out window for the Times feature (from the left)
+  // Click anywhere else to close
   const timesWindow = (anchor) => (
     <Box
       sx={{
@@ -71,6 +74,7 @@ function Nav() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <Times style={{ float: "left", width: "90%" }} />
+      {/* Add a button to hide the window*/}
       <Button
         style={{ float: "right", width: "10%" }}
         onClick={toggleDrawer(anchor, false)}
@@ -82,6 +86,9 @@ function Nav() {
       </Button>
     </Box>
   );
+
+  // Pop out window for the MetroTimes feature (from the top)
+  // Click anywhere else to close
   const metroWindow = (anchor) => (
     <Box
       sx={{

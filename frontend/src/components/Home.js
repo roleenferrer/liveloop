@@ -1,15 +1,18 @@
+// The home page of the Live Loop application
+
 import React from "react";
 import Map from "./Map.jsx";
 import Nav from "./Nav.js";
 import { makeStyles } from "@mui/styles";
 
+// Styles for each div
 const useStyles = makeStyles({
   nav: {
-    float: "left",
+    float: "left", // puts the navigation bar on the left
     width: "15%",
   },
   map: {
-    float: "right",
+    float: "right", // puts the navigation bar on the right
     width: "85%",
     height: "100hv",
   },
