@@ -101,7 +101,9 @@ function Times() {
   // will tell user how long it will take to walk from source to dest
   return (
     <React.Fragment>
-      <div style={{ display: "grid" }}>
+      <div
+        style={{ display: "grid", background: blueGrey[900], height: "100vh" }}
+      >
         <div style={{ display: "flex" }}>
           <RadioGroup
             style={{
