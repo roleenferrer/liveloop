@@ -18,7 +18,23 @@ PostgresSQL, specifically the Postgres.app for Mac (https://postgresapp.com)
 
 1. Clone the directory (https://github.com/roleenferrer/liveloop) onto your machine 
 
-2. There are multiple folders containing the contents of the project. In order to deploy the application successfully, create two seperate terminals, with one handling the backend directory and the other handling the frontend directory. These two must be run concurrently with Node.js in order to ensure a connection between frontend and backend.
+### Using install.py script (must have Python3 installed)
+
+1. In the liveloop directory run the following command:
+
+   ```python
+   python3 install.py
+   ```
+
+2. When finished installing dependencies, create two seperate terminals to for backend and frontend components, then run the command:
+
+   ```
+   npm start
+   ```
+
+### Not Using install.py script
+
+1. There are multiple folders containing the contents of the project. In order to deploy the application successfully, create two seperate terminals, with one handling the backend directory and the other handling the frontend directory. These two must be run concurrently with Node.js in order to ensure a connection between frontend and backend.
 
    1. For the **backend** directory (in a seperate terminal):
 
@@ -84,7 +100,7 @@ PostgresSQL, specifically the Postgres.app for Mac (https://postgresapp.com)
 
          which will start the frontend component.
 
-3. The appplication can now be ran locally, which can be found by enetering the local URL (http://localhost:3000)
+2. The appplication can now be ran locally, which can be found by enetering the local URL (http://localhost:3000)
 
 ## Known Issues
 
