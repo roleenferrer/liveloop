@@ -137,3 +137,8 @@ components:
           type: string
         password:
           type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
