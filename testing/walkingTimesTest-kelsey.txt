@@ -1,0 +1,33 @@
+Components of feature:
+
+	- Nav.js
+	- Times.js
+
+WalkingTimes Testing:
+
+	- Nav.js
+		- Navigation bar should be on very left, with a map with markers and moving stars on the right.
+		- The Navigation bar should contain a few components:
+				live loop logo
+				metro times option
+				times option
+				login option
+		- After clicking on times, a sliding window should appear from the left
+		- Clicking outside of this sliding window should get us back on the home page
+
+	- Times.js
+		- On the window there should be:
+			- Two identical lists of bus stops
+			- Selector bubbles that change color when bus stop selected
+			- At the bottom, there should be text that changes when different bus stops are 
+			  selected. This text says "ESTIMATED WALKING TIME FROM source TO destination
+			  IS APPROXIMATELY: some number of minutes"
+			- Choosing any pair of source and destination bus stops should result in varying
+			  results of walking time. These should be fairly accurate. 
+			- If user chooses bus stops where source ==  destination, walking time estimate
+			  is simply going to be 0
+			- If user hasn't chosen bus stops yet, there shouldn't be a walking time 
+			  estimate number visible yet. 
+
+
+
