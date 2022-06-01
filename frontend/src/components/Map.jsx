@@ -50,21 +50,21 @@ class Map extends React.Component {
         {lat:36.99145429283725, lng:-122.05464479513023, name: "East Remote Parking"},
         //East Field House
         {lat:36.994304362434605, lng:-122.05551753750245, name: "East Field House"},
-        //Crown and Merill College
+        //Cowell and Stevenson
         {lat:36.997539844191074, lng:-122.05506544030388, name: "Cowell and Stevenson"},
-        //College 9/10
+        //Crown and Merill College
         {lat:36.99904725113633, lng:-122.05514548284367, name: "Crown and Merill College"} ,
-        //Sciences Hill
+        //College 9/10
         {lat:36.99999651351248, lng:-122.0583279747162, name: "College 9/10"},
-        //Kresge
+        //Science Hill
         {lat:37.00002893600196, lng:-122.062329159318, name: "Science Hill"},
-        //Racheal Carsons
+        //Kresge
         {lat:36.99938734456224, lng:-122.06454996723684, name: "Kresge"},
-        //Oakes Collegse
-        {lat:36.99313410613227, lng:-122.06514372032822, name: "Racheal Carsons"},
-        //Arboretum
+        //Rachel Carson
+        {lat:36.99313410613227, lng:-122.06514372032822, name: "Rachel Carson"},
+        //Oakes College
         {lat:36.99191322700488, lng:-122.06679155373752, name: "Oakes College"},
-        //High and Western Dr
+        //Arboretum
         {lat:36.99004580052091, lng:-122.06718599652353, name: "Arboretum"},
         //Main Gate
         {lat:36.98289406053649, lng:-122.06269942075527, name: "High and Western Dr"}
@@ -118,9 +118,10 @@ class Map extends React.Component {
             showInfo: ''
         });
     };
-
+    // Requests for user's location
     getLocation = () => {
         navigator.geolocation.getCurrentPosition(
+            // If user allows, updates markerposition and map's center
             position => {
                 this.setState({
                     markerposition: {
@@ -130,17 +131,20 @@ class Map extends React.Component {
                     center: {
                         lat: position.coords.latitude,
                         lng: position.coords.longitude,
-                        zoom: 18
+                        zoom: 18 // Increase map zoom so user can see themselves more clearly
                     }
                 })
+                // Log user's position for testing purposes
                 console.log(position.coords.latitude)
                 console.log(position.coords.longitude)
             },
+            // If user does not allow, log error and default positions for testing purposes
             error => {
                 console.log(error)
                 console.log(this.location.lat)
                 console.log(this.location.lng)
             },
+            // Enable high-accuracy location fetching
             {enableHighAccuracy: true}
         )
     }
