@@ -40,8 +40,9 @@ class Map extends React.Component {
     };
 
     locations = [
-        //Main Entrance
-        {lat:36.9788656482405, lng:-122.05773923019366, name:"Main Entrance"}, 
+        {lat:36.9777223039389, lng:-122.0536747707009, name:"Main Entrance"},
+        //High/Western
+        {lat:36.9788656482405, lng:-122.05773923019366, name:"High/Western"}, 
         //Lower Campus
         {lat:36.981451629614874, lng:-122.05195574654519, name: "Lower Campus"},
         //The Farm
@@ -65,9 +66,9 @@ class Map extends React.Component {
         //Oakes College
         {lat:36.99191322700488, lng:-122.06679155373752, name: "Oakes College"},
         //Arboretum
-        {lat:36.99004580052091, lng:-122.06718599652353, name: "Arboretum"},
+        {lat:36.99004580052091, lng:-122.06718599652353, name: "Family Student Housing"},
         //Main Gate
-        {lat:36.98289406053649, lng:-122.06269942075527, name: "High and Western Dr"}
+        {lat:36.98289406053649, lng:-122.06269942075527, name: "Arboretum"}
     ];
 
     componentDidMount = () => {
@@ -156,6 +157,7 @@ class Map extends React.Component {
                 key={i}
                 position={{lat:location.lat, lng:location.lng}}
                 onMouseOver={() => this.handleToggleOpen(i)}
+                opacity={0.4}
                 >
                 {
                     this.state.showInfo === i &&
