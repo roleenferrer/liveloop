@@ -10,7 +10,7 @@ WalkingTimes Testing:
 		- The Navigation bar should contain a few components:
 				live loop logo
 				metro times option
-				times option
+				walking times option
 				login option
 		- After clicking on times, a sliding window should appear from the left
 		- Clicking outside of this sliding window should get us back on the home page
