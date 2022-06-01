@@ -1,0 +1,29 @@
+Node.js components:
+
+    ./backend/package.json
+    ./frontend/package.json
+
+Node.js testing:
+
+    Ensure that Node.js is installed (https://nodejs.org/en/)
+    - If not installed, "npm" commands will not work!
+    - else, continue
+
+    Ensure that node packet modules are successfully installed
+    - Run "npm install" on both backend and frontend directories
+        - If dependency version error, add flag "--legacy-peer-deps"
+    - Check to see follow files are added to both directories:
+        - node_modules, which contains the dependencies of their respective
+          directories
+        - package-lock.json, to ensure exact version of packages are installed
+          if modified
+
+    Ensure that backend portion of Live Loop works
+    - Assert that database and environment is created using Docker (see docker-roleen.txt)
+    - Run "npm start"
+        - Assert that API testing is available via Swagger UI at http://localhost:3010/v0/api-docs/
+        - Assert that API calls are working as intended
+    
+    Ensure that frontend portion of Live Loop works
+    - Run "npm start"
+        - Asser that webpage is available at http://localhost:3000

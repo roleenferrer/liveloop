@@ -1,0 +1,20 @@
+Docker components:
+
+    ./backend/docker-compose.yml
+
+Docker testing:
+    
+    Ensure that Docker is installed on system (https://www.docker.com/)
+    - If not installed "docker" commands will not work!
+    - else, continue
+
+    Ensure that Docker container is installed
+    - Run "docker compose up -d"
+        - Check to see if Docker container is running via Docker interface
+        - Check if database is setup via Docker container
+            - Named "live-loop-backend", using postgres database at port 5432
+        - Assert database is setup at port 5432 on local machine
+
+    Ensure that it is possible to remove Docker container
+    - Run "docker compose down"
+        - Check to see if DOcker container is removed via Docker interface
