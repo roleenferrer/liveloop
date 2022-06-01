@@ -1,0 +1,21 @@
+Components of feature
+  - mockdata.js
+  - tracker.js
+  - server.js
+  - app.js
+  - data.sql
+
+  - map.jsx
+
+  Testing:
+
+  Movement should be simulated by having a node server repeatedly update the database with coordinates of the shuttle positions.
+
+  - The backend api call that returns the current shuttle positions is in app.js and the function is defined in tracker.js.
+    - server.js runs the backend server that provides the api that the frontend communicates with
+  
+  - Every 1200ms, the separate server defined in mockdata.js queries the database in order to update the positions of all shuttles, with  values stemming from an array of coordinates defining the loop bus routes.
+
+  - The api call in app.js simply queries the databse through a "SELECT *" and returns the result.
+
+  - map.jsx will repeatedly call the backend api every 1200ms and show the shuttle positions on the map with the use of markers.
