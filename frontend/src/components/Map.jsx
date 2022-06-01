@@ -186,6 +186,9 @@ class Map extends React.Component {
                             zoom={this.state.center.zoom}
                         >
                             <div>{ this.renderMarkers() }</div>
+                            <Marker
+                              position = {this.state.markerposition}> 
+                            </Marker>
 
                             <Marker 
                                 icon={{
