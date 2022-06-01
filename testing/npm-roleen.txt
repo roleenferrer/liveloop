@@ -5,7 +5,7 @@ Node.js components:
 
 Node.js testing:
 
-    Ensure that Node.js is installed (https://nodejs.org/en/)
+    Ensure that Node.js is installed on system (https://nodejs.org/en/)
     - If not installed, "npm" commands will not work!
     - else, continue
 
