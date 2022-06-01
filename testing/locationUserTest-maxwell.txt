@@ -1,0 +1,19 @@
+Location User components:
+
+    In Map.jsx.js,
+    - exists getLocation function that fetches user's location
+
+Locaiton User testing:
+
+    To test Map.jsx (allow location)
+    - Click 'allow' when prompted by google to ask for location permission
+    - Inspect page and navigate to the console
+    - Check to see if your location was fetched in the console log
+      - If location is not the default center, fetch was successfull
+
+    To test Map.jsx (block location)
+    - Click 'block' when prompted by google to ask for location permission
+    - Inspect page and navigate to the console
+    - Check the console log
+      - If location fetching error was logged aand/or the default center
+        location, location was not fetched
