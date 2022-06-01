@@ -1,0 +1,40 @@
+Components for feature
+
+    - Home.js
+    - Nav.js
+    - MetroTimes.js
+
+MetroTimes UI testing:
+
+    Testing:
+
+        Home.js
+            - Upon opening up the application, the layout should be a grey navigation bar on the left with the map on the right
+        
+        Nav.js
+            - The navigation bar should be horizontally formated in the order:
+                - Live Loop logo
+                - DIVIDER
+                - Metro Times
+                - Times
+                - DIVIDER
+                - Login
+            - Increase + decrease size of the browser window, the naviagtion bar should always take up around 10% of the window
+            - When clicked on Metro Times, there should be a drop down window
+            - Clicking outside the pop out should close the window and return the site to its original state
+
+        MetroTimes.js
+            - On top of the drop down window should be a row of tabs:
+                - 15 WEEKDAY
+                - 18 WEEKEND
+                - 18 WEEKEND
+                - 19 WEEKDAY
+                - 19 WEEKEND
+                - 20 WEEKDAY
+                - 20 WEEKEND
+                - 22 WEEKDAY
+            - Clicking on one of the options should reveal the schedule corresponding to the selection
+            - Clicking on an option should not take users to another page
+                - Everything should happen within that window
+
+        

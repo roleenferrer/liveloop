@@ -1,0 +1,31 @@
+Components for feature
+
+    - Home.js
+    - Nav.js
+    - Times.js
+
+Times UI testing:
+
+    Testing:
+        
+        Home.js
+            - Upon opening up the application, the layout should be a grey navigation bar on the left with the map on the right
+        
+        Nav.js
+            - The navigation bar should be horizontally formated in the order:
+                - Live Loop logo
+                - DIVIDER
+                - Metro Times
+                - Times
+                - DIVIDER
+                - Login
+            - Increase + decrease size of the browser window, the naviagtion bar should always take up around 10% of the window
+            - When clicked on Times, there should be a pop out window from the left
+            - Clicking outside the pop out should close the window and return the site to its original state
+
+        Times.js
+            - Two columns of circular check boxes
+            - Only one circle can be checked per columns
+            - Selecting an option from the left should show the selection on the bottom in front of "TO"
+            - Selecting an option from the right should show the selection on the bottom behind "TO"
+            - Selecting an option from left and right columns should give an approximation written in front of "MINUTES"

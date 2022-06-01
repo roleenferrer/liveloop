@@ -1,0 +1,20 @@
+Components for feature
+
+    - Home.js
+    - Map.jsx
+
+Maps UI testing:
+
+    Testing:
+
+        Home.js
+            - Upon opening up the application, the layout should be a grey navigation bar on the left with the map on the right
+        
+        Map.jsx
+            - Increasing and decreasing the window should change the size of the map
+                - The map should always be about 90% of the window
+            - Upon rendering the page, there should be 14 markers on the map 
+            - Hovering a mouse over a marker should reveal a text box indicating what bus stop it is
+            - Hovering onto another marker will close the provious one and reveal the currently hovered one
+            - Pressing the X on the box should be the only way to close the text if no other markers are hovered 
+            
